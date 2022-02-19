@@ -23,18 +23,42 @@ double check_balance(double balance) {
 
 double deposit(double balance) {
 	double amount;
+	double new_balance;
+
+	cout << "********** Deposit **********" << endl;
 	cout << "Enter the amount: ";
 	cin >> amount;
+	if (amount <= 0) {
+		cout << "Invalid amount" << endl;
+		new_balance = balance;
+	}
+	else {
+		cout << "Money has been successfully added." << endl;
+		new_balance = balance + amount;
+	}
+	cout << "************************" << endl;
 
-	return balance += amount;
+	return new_balance;
 }
 
 double withdraw(double balance) {
 	double amount;
+	double new_balance;
+
+	cout << "********** Withdraw **********" << endl;
 	cout << "Enter the amount: ";
 	cin >> amount;
+	if (amount - balance <= 0) {
+		cout << "Insufficient funds or Invalid amount" << endl;
+		new_balance = balance;
+	}
+	else {
+		cout << "Money has been successfully withdraw." << endl;
+		new_balance = balance - amount;
+	}
+	cout << "************************" << endl;
 
-	return balance -= amount;
+	return new_balance;
 }
 
 int main() {
@@ -53,20 +77,14 @@ int main() {
 		switch (option) {
 		case 1:
 			cout << "********** Balance **********" << endl;
-			cout << "You have " << check_balance(balance) << " available." << endl;
+			cout << "You have $" << check_balance(balance) << " available." << endl;
 			cout << "************************" << endl;
 			break;
 		case 2:
-			cout << "********** Deposit **********" << endl;
 			balance = deposit(balance);
-			cout << "Money has been successfully added." << endl;
-			cout << "************************" << endl;
 			break;
 		case 3:
-			cout << "********** Withdraw **********" << endl;
 			balance = withdraw(balance);
-			cout << "Money has been successfully withdraw." << endl;
-			cout << "************************" << endl;
 			break;
 		case 4:
 			cout << "********** Exit **********" << endl;
