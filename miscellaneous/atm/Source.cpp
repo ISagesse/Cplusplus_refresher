@@ -48,6 +48,7 @@ int main() {
 		show_menu();
 		cout << "How can I help you today: ";
 		cin >> option;
+		system("cls");
 
 		switch (option) {
 		case 1:
@@ -64,7 +65,7 @@ int main() {
 		case 3:
 			cout << "********** Withdraw **********" << endl;
 			balance = withdraw(balance);
-			cout << "Money has been successfully added." << endl;
+			cout << "Money has been successfully withdraw." << endl;
 			cout << "************************" << endl;
 			break;
 		case 4:
