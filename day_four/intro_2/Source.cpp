@@ -2,7 +2,7 @@
 
 using namespace std;
 
-// writing data with a loop
+// writing data to an array using loop with a loop
 
 int main() {
 	int scores[10];
