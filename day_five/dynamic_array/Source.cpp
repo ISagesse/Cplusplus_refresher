@@ -22,5 +22,8 @@ int main() {
 		//cout << *(myArray + i) << " "; another way to get the array value without indexing.
 	}
 
+	delete[]myArray;
+	myArray = NULL;
+
 	return 0;
 }
