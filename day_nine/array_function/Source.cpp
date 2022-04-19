@@ -25,9 +25,9 @@ int main() {
 	char c_arr[] = { 'A', 'B', 'c', 'C', 'Z' };
 	int n = 5;
 
-	cout << max_in_array(arr, n) << endl;
-	cout << max_in_array(f_arr, n) << endl;
-	cout << max_in_array(c_arr, n) << endl;
+	cout << max_in_array<int>(arr, n) << endl;
+	cout << max_in_array<float>(f_arr, n) << endl;
+	cout << max_in_array<char>(c_arr, n) << endl;
 
 	return 0;
 }
