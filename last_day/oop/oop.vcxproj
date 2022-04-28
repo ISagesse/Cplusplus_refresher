@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{02b4ed13-db6b-4401-b0fa-c625070b5546}</ProjectGuid>
-    <RootNamespace>triangleguesser</RootNamespace>
+    <ProjectGuid>{f069976e-2ee5-45d7-94a3-6f3ae3ab7a94}</ProjectGuid>
+    <RootNamespace>oop</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
