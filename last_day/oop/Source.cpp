@@ -88,7 +88,7 @@ public:
 };
 
 // this developer class will inherit from the Employee class.
-class Developer :Employee {
+class Developer :public Employee {
 public:
 	string favorite_programing_langueage;
 
@@ -115,18 +115,19 @@ int main() {
 
 	// change our position to be a Senior Sofware Engirneering
 	e1.set_position("Senior Sofware Engirneering");
-	cout << "My new position is " << e1.get_position() << endl;
+	//cout << "My new position is " << e1.get_position() << endl;
 
 	//let's try changing the year of experience to 2.
 	e1.set_years_of_experience(2);
-	cout << "Years of experiece: " << e1.get_years_of_experience() << endl;
+	//cout << "Years of experiece: " << e1.get_years_of_experience() << endl;
 
 	Employee e2 = Employee("Employee", "Second", "Waiter", "Eat Good", 6);
-	e2.ask_for_promotion();
+	//e2.ask_for_promotion();
 	//second.introduction();
 
 	Developer d1 = Developer("James", "John", "Web Developer", "DoorDash", 1, "Javascript");
 	d1.hello_developer();
+	d1.ask_for_promotion();
 
 	return 0;
 }
