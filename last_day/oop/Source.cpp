@@ -121,7 +121,8 @@ int main() {
 	e1.set_years_of_experience(2);
 	cout << "Years of experiece: " << e1.get_years_of_experience() << endl;
 
-	Employee e2 = Employee("Employee", "Second", "Waiter", "Eat Good", 3);
+	Employee e2 = Employee("Employee", "Second", "Waiter", "Eat Good", 6);
+	e2.ask_for_promotion();
 	//second.introduction();
 
 	Developer d1 = Developer("James", "John", "Web Developer", "DoorDash", 1, "Javascript");
