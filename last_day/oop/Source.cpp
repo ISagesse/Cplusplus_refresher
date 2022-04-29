@@ -2,7 +2,11 @@
 
 using namespace std;
 
-class Employee {
+class AbstractEmployee {
+	virtual void ask_for_promotion()=0;
+};
+
+class Employee:AbstractEmployee {
 private:
 
 	string first_name;
@@ -72,26 +76,56 @@ public:
 	}
 
 
+	void ask_for_promotion(){
+		if (years_of_experience > 5) {
+			cout << "congradualation on your new position" << endl;
+		}
+		else
+		{
+			cout << "Need more year of experiences." << endl;
+		}
+	}
+};
+
+// this developer class will inherit from the Employee class.
+class Developer :Employee {
+public:
+	string favorite_programing_langueage;
+
+	Developer(string f_name, string l_name, string e_position, string e_company_name, int years_working, string programing_language)
+		:Employee(f_name, l_name, e_position, e_company_name, years_working)
+	{
+		favorite_programing_langueage = programing_language;
+	}
+
+	void hello_developer() {
+		//using getters and setter to access and modified the parent class.
+		// you can access and modified any protected argument or using getter
+		cout << get_first_name() << " Is our new developer, his favorite programing languages is " << favorite_programing_langueage << endl;
+
+	}
 };
 
 int main() {
 
 	// creating a class of first, calling the constructor and passed the disired values
-	Employee first = Employee("Israel", "Sagesse", "Sofware Engirneering", "FANG", 5);
+	Employee e1 = Employee("Israel", "Sagesse", "Sofware Engirneering", "FANG", 5);
 
 	//first.introduction();
 
 	// change our position to be a Senior Sofware Engirneering
-	first.set_position("Senior Sofware Engirneering");
-	cout << "My new position is " << first.get_position() << endl;
+	e1.set_position("Senior Sofware Engirneering");
+	cout << "My new position is " << e1.get_position() << endl;
 
 	//let's try changing the year of experience to 2.
-	first.set_years_of_experience(2);
-	cout << "Years of experiece: " << first.get_years_of_experience() << endl;
+	e1.set_years_of_experience(2);
+	cout << "Years of experiece: " << e1.get_years_of_experience() << endl;
 
-	Employee second = Employee("Employee", "Second", "Waiter", "Eat Good", 3);
+	Employee e2 = Employee("Employee", "Second", "Waiter", "Eat Good", 3);
 	//second.introduction();
 
+	Developer d1 = Developer("James", "John", "Web Developer", "DoorDash", 1, "Javascript");
+	d1.hello_developer();
 
 	return 0;
 }
